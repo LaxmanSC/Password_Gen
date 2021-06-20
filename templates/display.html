@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Jobs page</title>
+  </head>
+  <body>
+    <h1>List of Platforms and their dash</h1>
+  		<ul>
+  		{% for data in ret %}
+  		<li>{{data}}</li>
+  		{% endfor %}
+  		</ul>
+    </ol>
+    <script src="{{ url_for('static', filename='script.js')}}"></script>
+  </body>
+</html>  	
+  	
+
