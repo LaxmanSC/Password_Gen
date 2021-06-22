@@ -5,7 +5,7 @@ const sym = document.getElementById('symbols');
 const length = document.getElementById('length');
 const generation = document.getElementById('generate');
 const result = document.getElementById('password');
-const saveEl = document.getElementById('save');
+const resSave = document.getElementById('pass');
 
 generation.addEventListener('click', () => {
   const lengthi = +length.value;
@@ -13,13 +13,16 @@ generation.addEventListener('click', () => {
   const hasUpper = upperchar.checked;
   const hasNumber = num.checked;
   const hasSymbol = sym.checked;
+  let Res =  generatePass(lengthi, hasLower, hasUpper, hasNumber, hasSymbol);  
 
-  result.innerText = generatePass(lengthi, hasLower, hasUpper, hasNumber, hasSymbol);
+    result.innerText = Res;
+    if(Res == "Error: Length too large or small" || Res =="Error: No checkbox selected") {
+	resSave.value = "";
+    }
+    else {
+	resSave.value = Res;
+    }
 });
-
-saveEl.addEventListener('click', () => {
-  console.log(result.innerText)
-})
 
 function generatePass(len,Low, Up, Num, Sym) {
   var pass = ""

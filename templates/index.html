@@ -37,12 +37,24 @@
       <button class="generate" id="generate">Generate Password</button>
     </div>
   </div>
+  <br>
 	<div class="database">
 		<form action="/show" method="post">
   		<button name = "show" class = "show" id="show", value='clicked'>Show pass</button>
   	</form>
+	  <form action="/save" method="post">
+  		<div class="forms">
+  			<label for="pass"> Password </label>
+  			<input type="text" id="pass" name="pass"/><br><hr color = #3B3B98>
+ 				<label for="plat"> Platform.</label>
+ 				<input type="text" id="plat" name="plat" />
+ 			</div>
+ 			<button name = "save" class = "save" id="save", value='clicked'>Save</button>
+  		</form>
   </div>
   <script src="{{ url_for('static', filename='script.js')}}"></script>
+
+
 </body>
 </html>
 
